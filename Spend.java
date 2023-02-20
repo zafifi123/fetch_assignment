@@ -11,8 +11,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class Spend{
    
+   /**
+      * reads from file and puts transactions in arraylist
+      *
+      * @param String filename - file path to read
+      * @return arraylist of transaction objects
+      */
     private static List<Transaction> readTransactionsFromFile(String filename) {
         List<Transaction> transactions = new ArrayList<>();
 
@@ -39,7 +46,14 @@ public class Spend{
 
         return transactions;
     }
-
+   
+   /**
+      * tracks spent points and updates available balances
+      *
+      * @param int pointsToSpend - how many points intending to spend
+      * @param List transactions - list of transactions
+      * @return arraylist of transaction objects
+      */
     private static Map<String, Integer> spendPoints(int pointsToSpend, List<Transaction> transactions) {
  
         // oldest to newest timestamp
@@ -68,12 +82,16 @@ public class Spend{
             payerBalances.put(payer, payerBalances.getOrDefault(payer, 0) - pointsToSpendFromTransaction);
 
             // Update the total number of points spent
-            pointsAvail -= pointsAvailFromTrans;
+            pointsToSpend -= pointsAvailFromTrans;
         }
 
         return payerBalances;
     }
-
+   
+  /**
+    * transaction class that allows for detailed transaction objects
+    *
+    */
     private static class Transaction implements Comparable<Transaction> {
         private final String payer;
         private int points;
@@ -107,6 +125,10 @@ public class Spend{
         }
     }
     
+    /**
+      * reads from file, calls methods and prints balances afterwards.
+      *
+      */
     public static void main(String[] args) {
     
         // Check that the correct number of arguments have been provided
