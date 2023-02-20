@@ -1,3 +1,5 @@
-1. I decided to use java for this program. I used 
-2. What are the advantages and disadvantages of your solution?
-3. What has been a favorite school/personal project thus far? What about it that challenged you?
+1. I decided to use java for this program. I used java.io.BufferedReader and java.io.FileReader to parse the csv file and also used some libraries to help implement the data structures I wanted to use. I used a hashmap because of its efficeny over arraylists. However, I needed to use an arraylist for more dynamic allocations, which also allows for any csv to be parsed into an arraylist.
+
+2. The advantages of my program is the readability of it and the encapsulation using methods. I also utilized various classes which allow for cleaner code in this case. I believe I could have used more generics to make my program more reusable. I also most likely should have used python for its wider range of libraries in data processing and csv scraping. I know pandas is a very powerful library I've used before, but I am more comfortable with implementing data structures in java.
+
+3. I am currently doing research for Dr. Aussie Suzuki in pattern classification of chromosomal abnormalities. I love the freedom of trying out various methods via trial and error, but it is certainly challenging to read through a lot of research papers beforehand as they can be fairly dense. I am getting a lot better at formulating a structure around each approach I take and documenting what I tried, and learning what there is to improve. Overall, it has been a very fun and rewarding experience so far.
