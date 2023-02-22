@@ -34,8 +34,8 @@ public class Spend{
                 String[] content = line.split(",");
                 String payer = content[0];
                 
-                int points = Integer.parseInt(parts[1]);
-                LocalDateTime timestamp = LocalDateTime.parse(parts[2], DateTimeFormatter.ISO_DATE_TIME);
+                int points = Integer.parseInt(content[1]);
+                LocalDateTime timestamp = LocalDateTime.parse(content[2], DateTimeFormatter.ISO_DATE_TIME);
                 
                 //add new object of transaction into list
                 transactions.add(new Transaction(payer, points, timestamp));
