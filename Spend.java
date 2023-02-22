@@ -73,7 +73,7 @@ public class Spend{
             LocalDateTime timestamp = transaction.getTimestamp();
 
             // Calculate the number of points to spend from this transaction
-            int pointsAvailFromTrans = Math.min(points, pointsAvail);
+            int pointsAvailFromTrans = Math.min(points, pointsToSpend);
 
             // Subtract the spent points from the transaction
             transaction.setPoints(points - pointsAvailFromTrans);
