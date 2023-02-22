@@ -76,10 +76,10 @@ public class Spend{
             int pointsAvailFromTrans = Math.min(points, pointsAvail);
 
             // Subtract the spent points from the transaction
-            transaction.setPoints(points - pointsToSpendFromTransaction);
+            transaction.setPoints(points - pointsAvailFromTrans);
 
             // Subtract the spent points from the payer's balance
-            payerBalances.put(payer, payerBalances.getOrDefault(payer, 0) - pointsToSpendFromTransaction);
+            payerBalances.put(payer, payerBalances.getOrDefault(payer, 0) - pointsAvailFromTrans);
 
             // Update the total number of points spent
             pointsToSpend -= pointsAvailFromTrans;
